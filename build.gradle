@@ -17,6 +17,13 @@ repositories {
     mavenCentral()
 }
 
+// repositories {
+//     maven {
+//         url "http://repo1.maven.org/maven2"
+//         allowInsecureProtocol = true
+//     }
+// }
+
 dependencies {
 
     testImplementation 'org.testng:testng:6.9.10'
@@ -27,11 +34,11 @@ dependencies {
 
 }
 
-buildDir = 'build'
+// buildDir = 'build'
 
 test {
     useTestNG() {
-        useDefaultListeners = true // generates the test report
+        useDefaultListeners = true 
         suites "src/test/resources/testng.xml"
     }
 
@@ -58,7 +65,11 @@ test {
 
 }
 
-mainClassName = 'demo.App'
+// mainClassName = 'demo.App'
+
+application {
+    mainClass = 'demo.TestCases'
+}
 
 checkstyle {
     toolVersion = '8.45' // Check for the latest version compatible with your setup
